@@ -1,5 +1,3 @@
-# Anchor Privacy Policy
-
 Anchor stores your check-ins, journal entries, and urge logs in a
 private Supabase database tied to your email-verified account. This
 data is not shared with anyone. No analytics, no ads, no tracking.
