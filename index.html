@@ -3,71 +3,576 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anchor — Privacy Policy</title>
+  <title>Anchor — Private Recovery Companion</title>
+  <meta name="description" content="The private recovery app for men. No ads, no trackers, no data sold. Your worst moments are not our product." />
+  <meta property="og:title" content="Anchor — Private Recovery Companion" />
+  <meta property="og:description" content="No ads. No trackers. No data sold. Private recovery tracking for men who are serious about change." />
+  <meta property="og:image" content="https://anchorrecovery.us/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #1a1814;
+      --bg2:     #252118;
+      --bg3:     #2b2516;
+      --gold:    #c9a84c;
+      --gold2:   #b8943d;
+      --text:    #f0ebe0;
+      --text2:   #c4bba8;
+      --muted:   #8a8070;
+      --border:  #302a1f;
+      --green:   #7a9e7e;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: #1a1814;
-      color: #f0ebe0;
-      font-family: Georgia, serif;
-      padding: 48px 24px;
-      line-height: 1.7;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 560px;
-      margin: 0 auto;
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26, 24, 20, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 60px;
     }
-    .wordmark {
-      font-size: 22px;
-      color: #c9a84c;
+
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
       letter-spacing: 0.5px;
-      margin-bottom: 4px;
     }
-    .tagline {
-      font-size: 13px;
-      color: #8a8070;
-      letter-spacing: 0.5px;
-      margin-bottom: 48px;
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: background 0.15s;
     }
-    h1 {
-      font-size: 24px;
-      color: #f0ebe0;
-      margin-bottom: 24px;
-      font-weight: normal;
+
+    .nav-cta:hover { background: var(--gold2); }
+
+    /* ── Sections ────────────────────────────────────────── */
+    section { padding: 80px 24px; max-width: 760px; margin: 0 auto; }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding-top: 96px;
+      padding-bottom: 80px;
     }
-    p {
-      font-size: 15px;
-      color: #c8c0b0;
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
       margin-bottom: 20px;
     }
-    .meta {
+
+    .hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text2);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .hero-privacy {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .btn-appstore {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 16px 32px;
+      border-radius: 14px;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn-appstore:hover { background: var(--gold2); transform: translateY(-1px); }
+
+    .btn-appstore svg { width: 20px; height: 20px; }
+
+    .hero-sub-note {
+      margin-top: 16px;
       font-size: 13px;
-      color: #5a5246;
-      margin-top: 48px;
-      border-top: 1px solid #2e2a24;
-      padding-top: 24px;
+      color: var(--muted);
     }
-    a {
-      color: #c9a84c;
-      text-decoration: none;
+
+    /* ── Pillars ─────────────────────────────────────────── */
+    .pillars {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 24px 64px;
+      max-width: 760px;
+      margin: 0 auto;
     }
+
+    .pillar {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+    }
+
+    .pillar-icon { font-size: 24px; margin-bottom: 10px; }
+
+    .pillar-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .pillar-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Divider ─────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ── How it works ────────────────────────────────────── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step h3 {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .step p { font-size: 15px; color: var(--text2); }
+
+    /* ── Features ────────────────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 520px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .feature-check {
+      color: var(--gold);
+      font-size: 16px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .feature-text { font-size: 14px; color: var(--text2); line-height: 1.5; }
+
+    /* ── Privacy promise ─────────────────────────────────── */
+    .privacy-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .privacy-box h2 {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .privacy-box p {
+      font-size: 15px;
+      color: var(--text2);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .privacy-box p:last-child { margin-bottom: 0; }
+
+    /* ── Pricing ─────────────────────────────────────────── */
+    .pricing-cards {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      flex: 1;
+      min-width: 220px;
+      background: var(--bg2);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .price-card.featured {
+      border-color: var(--gold);
+      background: var(--bg3);
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .price-title {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .price-amount {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .price-period { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+
+    .price-trial {
+      font-size: 13px;
+      color: var(--green);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .price-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Scripture ───────────────────────────────────────── */
+    .scripture {
+      text-align: center;
+      padding: 64px 24px;
+    }
+
+    .scripture blockquote {
+      font-family: 'Lora', serif;
+      font-size: clamp(18px, 3vw, 24px);
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 16px;
+    }
+
+    .scripture cite {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Section labels ──────────────────────────────────── */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(24px, 4vw, 32px);
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--text2); }
+
+    .footer-copy { font-size: 12px; color: var(--muted); }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="wordmark">Anchor</div>
-    <div class="tagline">Your recovery, your pace.</div>
 
-    <h1>Privacy Policy</h1>
+  <!-- Nav -->
+  <nav>
+    <span class="nav-logo">Anchor</span>
+    <a class="nav-cta" href="https://apps.apple.com/app/id6762081643">Download</a>
+  </nav>
 
-    <p>Anchor stores your check-ins, journal entries, and urge logs in a private database tied to your email-verified account. This data is not shared with anyone. No analytics, no ads, no tracking.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-eyebrow">Recovery companion for men</div>
+    <h1>Your worst moments<br>are not our product.</h1>
+    <p class="hero-sub">Anchor is the private recovery app.<br>No ads. No trackers. No data sold.</p>
+    <p class="hero-privacy">Your check-ins, journal, and triggers belong to you — and no one else.</p>
+    <a class="btn-appstore" href="https://apps.apple.com/app/id6762081643">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+    </a>
+    <p class="hero-sub-note">iOS only · Free 7-day trial</p>
+  </section>
 
-    <p>You can export and delete all your data at any time from <strong>Settings &rarr; Your Data</strong>.</p>
-
-    <div class="meta">
-      Contact: <a href="mailto:rjflanagan12345@gmail.com">SEND EMAIL</a><br />
-      Effective: April 1, 2026
+  <!-- Pillars -->
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">🚫</div>
+      <div class="pillar-title">No Ads</div>
+      <div class="pillar-body">Zero advertising. Your recovery isn't an audience.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🔒</div>
+      <div class="pillar-title">No Trackers</div>
+      <div class="pillar-body">No analytics, no third-party SDKs watching you.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">🗑️</div>
+      <div class="pillar-title">No Data Sold</div>
+      <div class="pillar-body">Your data is yours. Delete everything in one tap.</div>
     </div>
   </div>
+
+  <div class="divider"></div>
+
+  <!-- How it works -->
+  <section>
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Three buttons.<br>That's the whole check-in.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Tap what's true</h3>
+          <p>Clean, urge, or lapse — one tap every time your state changes. Urges are logged as wins. You noticed one and worked through it.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>See your patterns</h3>
+          <p>The Insights tab shows your top triggers, peak risk times, and how your streaks actually build. Real data, not motivation posters.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Turn falls into data</h3>
+          <p>After a lapse, Anchor walks you through a structured debrief an hour later — turning shame into information you can actually use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <section>
+    <div class="section-label">What you get</div>
+    <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Hour-accurate clean-time tracking — not calendar days</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">SOS screen with 4-7-8 breathing — one tap from home</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Structured lapse debrief with trigger analysis</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Private journal with daily prompts</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Face ID / Touch ID privacy lock</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Pattern insights: triggers, time-of-day, day-of-week</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Daily scripture and reflection (optional toggle)</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span class="feature-text">Full data export and one-tap account deletion</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Privacy promise -->
+  <section>
+    <div class="section-label">Our promise</div>
+    <div class="privacy-box">
+      <h2>We know what's in the category.<br>We built the opposite.</h2>
+      <p>Anchor has no ads. No analytics. No third-party trackers. No one is selling your check-ins, your journal, or your triggers to anyone — not even an aggregated version.</p>
+      <p>Your data lives in a private database tied to your account, encrypted at rest, locked behind Face ID, and exportable or deletable at any time from Settings.</p>
+      <p>No "accountability partner" shipping screenshots of your screen to anyone. No chatbots trained on your confessions. No community feed.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Pricing -->
+  <section>
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, honest pricing.</h2>
+    <div class="pricing-cards">
+      <div class="price-card featured">
+        <div class="price-badge">BEST VALUE</div>
+        <div class="price-title">Annual</div>
+        <div class="price-amount">$59.99</div>
+        <div class="price-period">per year</div>
+        <div class="price-trial">7-day free trial included</div>
+        <div class="price-note">After trial, auto-renews annually. Cancel any time in iOS Settings.</div>
+      </div>
+      <div class="price-card">
+        <div class="price-title">Weekly</div>
+        <div class="price-amount">$1.49</div>
+        <div class="price-period">per week</div>
+        <div style="height: 24px;"></div>
+        <div class="price-note">Auto-renews weekly. Cancel any time in iOS Settings.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Scripture -->
+  <div class="scripture">
+    <blockquote>"Though the righteous fall seven times, they rise again."</blockquote>
+    <cite>— Proverbs 24:16</cite>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Anchor</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+      <a href="mailto:rjflanagan12345@gmail.com">Support</a>
+    </div>
+    <div class="footer-copy">© 2026 Robert Flanagan. All rights reserved.</div>
+  </footer>
+
 </body>
 </html>
